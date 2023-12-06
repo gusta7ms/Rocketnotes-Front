@@ -18,7 +18,7 @@ app.get("/users", (request, response) => {
 
   response.send(`
    Pagina: ${page}.
-   Limit: ${limits}
+   Limit: ${limits}.
   `)
 })
 
