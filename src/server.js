@@ -1,25 +1,14 @@
 const express = require("express")
 
 const app = express()
+app.use(express.json())
 
 const PORT = 3333
 
-app.get("/message/:id/:user", (request, response) => {
-  const { id, user } = request.params;
+app.post("/users", (request, response) => {
+  const { name, email, password } = request.body
 
-  response.send(`
-    Id do usuário: ${id}
-    Nome do usuário: ${user}
-  `)
-})
-
-app.get("/users", (request, response) => {
-  const { page, limits } = request.query
-
-  response.send(`
-   Pagina: ${page}.
-   Limit: ${limits}.
-  `)
+  response.json({ name, email, password })
 })
 
 app.listen(PORT, () => console.log(`O server está rodando na porta: ${PORT}`))
