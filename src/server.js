@@ -4,8 +4,14 @@ const app = express()
 
 const PORT = 3333
 
-app.get("/", (request,response) => {
-    response.send('Hello, world')
+app.get("/message/:id/:user", (request, response) => {
+  const { id, user } = request.params;
+
+
+  response.send(`
+    Id do usuário: ${id}
+    Nome do usuário: ${user}
+  `)
 })
 
 app.listen(PORT, () => console.log(`O server está rodando na porta: ${PORT}`))
