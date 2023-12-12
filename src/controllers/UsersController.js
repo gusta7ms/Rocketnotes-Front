@@ -1,15 +1,26 @@
 const AppError = require("../utils/AppError")
-
+const sqliteConfections = require("../database/sqlite")
 
 class UsersController {
-  create(request, response) {
+  async create(request, response) {
     const { name, email, password } = request.body
 
-    if(!name){
-      throw new AppError("O nome é obrigatório")
+    const database = await sqliteConfections()
+    const checkUserExist = await database
+      .get("SELECT * FROM users WHERE email = (?)" , [email])
+
+    if(checkUserExist) {
+      throw new AppError("This user already exists")
     }
 
-    response.status(201).json({ name, email, password })
+    await database.run(
+      "INSERT INTO users (name, email, password) VALUES (?,?,?)",
+      [name, email, password]
+
+      )
+
+    return response.status(201).json()
+
   }
 }
 
