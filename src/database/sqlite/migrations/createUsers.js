@@ -5,9 +5,9 @@ const createUsers = `
     email VARCHAR,
     password VARCHAR,
     avatar VARCHAR NULL,
-    created_at TIMESTAMP DEFAULT CORRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CORRENT_TIMESTAMP
-)
-`;
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  )
+`
 
-module.exports = createUsers;
+module.exports = createUsers
