@@ -9,7 +9,7 @@ class UsersController {
     const database = await sqliteConnection()
     const checkUserExists = await database.get("SELECT * FROM users WHERE email = (?)", [email])
 
-    if (checkUserExists){
+    if (checkUserExists) {
       throw new AppError("Este e-mail já está em uso.")
     }
 
@@ -28,31 +28,31 @@ class UsersController {
     const { id } = request.params;
 
     const database = await sqliteConnection();
-    const user =  await database.get(`SELECT * FROM users WHERE id = (?)`, [id]);
+    const user = await database.get(`SELECT * FROM users WHERE id = (?)`, [id]);
 
     if (!user) {
       throw new AppError("Usuário não encontrado!")
     }
 
     const userWithUpdatedEmail = await database
-    .get(`SELECT * FROM users WHERE email = (?)`, [email])
+      .get(`SELECT * FROM users WHERE email = (?)`, [email])
 
     if (userWithUpdatedEmail && userWithUpdatedEmail.id !== user.id) {
       throw new AppError("Esse email já está em uso!")
     }
 
-    if(password && !old_password) {
+    if (password && !old_password) {
       throw new AppError("Você precisa informar a senha antiga para atualizar a nova")
     }
 
-    if(password && old_password) {
+    if (password && old_password) {
       const checkOldPassword = await compare(old_password, user.password)
 
-      if(!checkOldPassword) {
+      if (!checkOldPassword) {
         throw new AppError("Senha antiga ela não conference")
       }
 
-      if(password === old_password) {
+      if (password === old_password) {
         throw new AppError("A senha tem que ser diferente da atual")
       }
       user.password = await hash(password, 8)
@@ -69,9 +69,9 @@ class UsersController {
       updated_at = DATETIME('now')
       WHERE id = ?`,
       [user.name, user.email, user.password, id]
-      )
+    )
 
-      return response.status(200).json()
+    return response.status(200).json()
   }
 }
 
