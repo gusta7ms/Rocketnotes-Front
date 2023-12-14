@@ -30,7 +30,7 @@ class NotesController {
 
     await knex("tags").insert(tagsInsert);
 
-    response.json("furunfou")
+    response.json()
   }
 
   async show(request, response) {
@@ -51,8 +51,21 @@ class NotesController {
 
     await knex("notes").where({ id }).delete()
 
-    return response.json("farundou o deletamento")
+    return response.json()
   }
+
+  async index(request, response) {
+    const { user_id } = request.query;
+
+    const notes = await knex("notes")
+    .where({user_id})
+    .orderBy("title");
+
+    return response.json(notes)
+
+
+  }
+
 }
 
 module.exports = NotesController;
