@@ -41,8 +41,15 @@ class UsersController {
       throw new AppError("Esse email já está em uso!")
     }
 
+    user.name = name ?? user.name;
+    user.email = email ?? user.email;
+
     if (password && !old_password) {
-      throw new AppError("Você precisa informar a senha antiga para atualizar a nova")
+      throw new AppError("Você tem que informar a senha antiga para definir a nova senha")
+    }
+
+    if((password === old_password)){
+      throw new AppError("A senha tem que ser diferente da atual")
     }
 
     if (password && old_password) {
@@ -52,14 +59,8 @@ class UsersController {
         throw new AppError("Senha antiga ela não conference")
       }
 
-      if (password === old_password) {
-        throw new AppError("A senha tem que ser diferente da atual")
-      }
       user.password = await hash(password, 8)
     }
-
-    user.name = name ?? user.name;
-    user.email = email ?? user.email;
 
     database.run(`
       UPDATE users SET
