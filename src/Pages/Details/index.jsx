@@ -1,17 +1,16 @@
-import { Conteiner } from "./styles";
+// TODO PAGES DETAILS
+// ! PAGES DETAILS
+// ? PAGES DETAILS
 
+import { Conteiner } from "./styles";
 import { Button } from '../../Components/Button'
-// import { Button } from '../..//Button'
+import { Header } from "../../Components/Header";
 
 export function Details() {
   return (
     <Conteiner>
-      <h1>Hello Word!</h1>
-
-      <h2>Gustavo Melo</h2>
-
-      <Button title="Entrar" />
-      <Button title="Cadastrar" />
+      <Header/>
+      <Button title="Voltar" />
     </Conteiner>
   );
 }
