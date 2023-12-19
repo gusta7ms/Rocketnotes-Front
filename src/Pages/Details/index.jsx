@@ -2,15 +2,16 @@
 // ! PAGES DETAILS
 // ? PAGES DETAILS
 
-import { Conteiner } from "./styles";
-import { Button } from '../../Components/Button'
-import { Header } from "../../Components/Header";
+import { Conteiner } from './styles'
+
+import { Header } from '../../components/Header'
+import { Button } from '../../components/Button'
 
 export function Details() {
   return (
     <Conteiner>
-      <Header/>
+      <Header />
       <Button title="Voltar" />
     </Conteiner>
-  );
+  )
 }

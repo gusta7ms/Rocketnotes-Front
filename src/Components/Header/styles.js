@@ -14,6 +14,32 @@ export const Conteiner = styled.header`
   justify-content: space-between;
 
   padding: 0 80px;
+`;
 
-  background:red ;
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+
+  > img {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    line-height: 24px;
+
+    span {
+      font-size: 16px;
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
+
+    strong {
+      font-size: 18px;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+  }
 `;

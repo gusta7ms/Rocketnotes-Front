@@ -9,8 +9,8 @@ export const Conteiner = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-row:105px auto;
+  grid-template-rows: 105px auto;
   grid-template-areas:
     "header"
-    "content"
+    "content";
 `;
