@@ -1,17 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { ThemeProvider } from "styled-components";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyles from './styles/global'
 
-import GlobalStyles from "./Styles/global";
-import theme from "./Styles/theme";
+import theme from './styles/theme'
 
-import { Details } from "./Pages/Details";
+import { Details } from './pages/Details'
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Details />
     </ThemeProvider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const Conteiner = styled.header`
-  align-items: center;
+export const Container = styled.header`
   grid-area: header;
 
   height: 105px;
@@ -22,8 +21,8 @@ export const Profile = styled.div`
   align-items: center;
 
   > img {
-    height: 56px;
     width: 56px;
+    height: 56px;
     border-radius: 50%;
   }
 
@@ -34,7 +33,7 @@ export const Profile = styled.div`
     line-height: 24px;
 
     span {
-      font-size: 16px;
+      font-size: 14px;
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
 
@@ -47,15 +46,10 @@ export const Profile = styled.div`
 
 export const Logout = styled.button`
   border: none;
-  border-radius: 50%;
   background: none;
-
-  width: 56px;
-  height: 56px;
 
   > svg {
     color: ${({ theme }) => theme.COLORS.GRAY_100};
-
     font-size: 36px;
   }
 `;

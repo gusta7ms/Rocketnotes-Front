@@ -1,9 +1,9 @@
 import { RiShutDownLine } from "react-icons/ri";
-import { Conteiner, Profile, Logout } from "./styles";
+import { Container, Profile, Logout } from "./styles";
 
 export function Header() {
   return (
-    <Conteiner>
+    <Container>
       <Profile>
         <img src="https://github.com/gusta7ms.png" alt="Foto do usuário" />
 
@@ -16,6 +16,6 @@ export function Header() {
       <Logout>
         <RiShutDownLine />
       </Logout>
-    </Conteiner>
+    </Container>
   );
 }

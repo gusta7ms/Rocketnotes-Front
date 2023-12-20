@@ -2,25 +2,35 @@
 // ! PAGES DETAILS
 // ? PAGES DETAILS
 
-import { Conteiner, Links } from './styles'
+import { Container, Links } from "./styles";
 
-import { Header } from '../../components/Header'
-import { Button } from '../../components/Button'
-import { Section } from '../../Components/Section'
+import { Header } from "../../Components/Header";
+import { Button } from "../../Components/Button";
+import { Section } from "../../Components/Section";
+import { Tag } from "../../Components/Tag";
 
 export function Details() {
   return (
-    <Conteiner>
+    <Container>
       <Header />
 
-      <Section title='Links uteis'>
+      <Section title="Links úteis">
         <Links>
-          <li><a href="#">https://www.rocketseat.com.br/</a></li>
-          <li><a href="#">https://www.rocketseat.com.br/</a></li>
+          <li>
+            <a href="#">https://rocketseat.com.br</a>
+          </li>
+          <li>
+            <a href="#">https://rocketseat.com.br</a>
+          </li>
         </Links>
       </Section>
 
+      <Section title="Marcadores">
+        <Tag title="express" />
+        <Tag title="node" />
+      </Section>
+
       <Button title="Voltar" />
-    </Conteiner>
-  )
+    </Container>
+  );
 }

@@ -4,9 +4,9 @@
 
 import styled from "styled-components";
 
-export const Conteiner = styled.div`
+export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100h;
 
   display: grid;
   grid-template-rows: 105px auto;
@@ -14,7 +14,6 @@ export const Conteiner = styled.div`
     "header"
     "content";
 `;
-
 
 export const Links = styled.ul`
   list-style: none;

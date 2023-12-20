@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Conteiner = styled.section`
-  margin: 56px 0 26pc;
+export const Container = styled.section`
+  margin: 56px 0 28px;
 
   > h2 {
     border-bottom-width: 1px;
@@ -13,6 +13,6 @@ export const Conteiner = styled.section`
 
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
   }
 `;
