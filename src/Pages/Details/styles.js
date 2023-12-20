@@ -1,6 +1,4 @@
-// TODO PAGES STYLES DETAILS
-// ! PAGES STYLES DETAILS
-// ? PAGES STYLES DETAILS
+
 
 import styled from "styled-components";
 

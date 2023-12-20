@@ -1,6 +1,4 @@
-// TODO PAGES DETAILS
-// ! PAGES DETAILS
-// ? PAGES DETAILS
+
 
 import { Container, Links, Content } from "./styles";
 
