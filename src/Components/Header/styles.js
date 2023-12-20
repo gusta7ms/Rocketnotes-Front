@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Conteiner = styled.header`
-
   align-items: center;
   grid-area: header;
 
