@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Conteiner = styled.header`
+
+  align-items: center;
   grid-area: header;
 
   height: 105px;
@@ -41,5 +43,20 @@ export const Profile = styled.div`
       font-size: 18px;
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
+  }
+`;
+
+export const Logout = styled.button`
+  border: none;
+  border-radius: 50%;
+  background: none;
+
+  width: 56px;
+  height: 56px;
+
+  > svg {
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
+
+    font-size: 36px;
   }
 `;
