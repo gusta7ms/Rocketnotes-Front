@@ -48,13 +48,21 @@ export function Home() {
             data={{
               title: "React Modal",
               tags: [
-                { id: "1", name: "React" },
-                { id: "2", name: "Notes" },
+                { id: "1", name: "react" },
               ],
             }}
           />
 
-           
+          <Note
+            data={{
+              title: "Exemplo de Middleware",
+              tags:[
+                { id: "1", name: "express"},
+                { id: "2", name: "nodejs"},
+              ]
+            }}
+          />
+
 
         </Section>
       </Content>
