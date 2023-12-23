@@ -12,6 +12,8 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.WHITE};
 
     -webkit-font-smoothing: antialiased;
+
+    padding-right:  8px;
   }
 
   body, input, button, textarea {
@@ -34,6 +36,17 @@ export default createGlobalStyle`
   }
 
   ul {
-      list-style-type: none;
-    }
+    list-style-type: none;
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
 `;
