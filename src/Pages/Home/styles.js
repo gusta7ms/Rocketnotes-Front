@@ -24,11 +24,11 @@ export const Brand = styled.div`
   grid-area: brand;
 
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 
-  border-bottom-width:1px;
-  border-bottom-style:solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
@@ -40,8 +40,18 @@ export const Brand = styled.div`
 
 export const Menu = styled.ul`
   grid-area: menu;
+
+  display: flex;
+  flex-direction: column;
+
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
+  padding-top: 62px;
+
+  > li {
+    margin: 0 auto;
+    padding-bottom: 24px;
+  }
 `;
 
 export const Search = styled.div`

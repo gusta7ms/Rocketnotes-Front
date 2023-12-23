@@ -2,9 +2,10 @@
 // ! PAGES HOME
 // ? PAGES HOME
 
-import { Container, Brand, Menu, Search, Content, NewNote } from './styles'
+import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
 
-import { Header } from '../../components/Header'
+import { Header } from "../../components/Header";
+import { ButtonText } from "../../components/ButtonText";
 
 export function Home() {
   return (
@@ -16,20 +17,25 @@ export function Home() {
       <Header></Header>
 
       <Menu>
-
+        <li>
+          <ButtonText title="Todos" isActive />
+        </li>
+        <li>
+          <ButtonText title="Node" />
+        </li>
+        <li>
+          <ButtonText title="Express" />
+        </li>
+        <li>
+          <ButtonText title="React" />
+        </li>
       </Menu>
 
-      <Search>
+      <Search></Search>
 
-      </Search>
+      <Content></Content>
 
-      <Content>
-
-      </Content>
-
-      <NewNote>
-
-      </NewNote>
+      <NewNote></NewNote>
     </Container>
-  )
+  );
 }
