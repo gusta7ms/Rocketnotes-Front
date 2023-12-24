@@ -13,7 +13,6 @@ export default createGlobalStyle`
 
     -webkit-font-smoothing: antialiased;
 
-    padding-right:  8px;
   }
 
   body, input, button, textarea {

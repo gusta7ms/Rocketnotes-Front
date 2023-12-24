@@ -1,5 +1,3 @@
-// TODO PAGES SingIN
-
 import { FiMail, FiLock } from "react-icons/fi";
 
 import { Container, Form, Background} from "./styles";
