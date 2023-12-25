@@ -2,6 +2,8 @@
 
 import { FiUser, FiMail, FiLock} from "react-icons/fi";
 
+import { Link } from "react-router-dom";
+
 import { Container, Form, Background} from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -25,7 +27,7 @@ export function SingUp() {
 
         <Button title="Cadastrar seu novo usuário" />
 
-        <a href="#">Voltar para o Login</a>
+        <Link to="/">Voltar para login</Link>
       </Form>
 
     </Container>
