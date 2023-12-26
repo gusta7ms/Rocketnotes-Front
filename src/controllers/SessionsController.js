@@ -1,6 +1,7 @@
 const { compare } = require("bcryptjs");
 
 const knex = require("../database/knex");
+
 const AppError = require("../utils/AppError");
 
 const authConfig = require("../configs/auth");
