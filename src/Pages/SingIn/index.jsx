@@ -1,15 +1,19 @@
 import { FiMail, FiLock } from "react-icons/fi";
-
 import { Link } from "react-router-dom";
 
-import { Container, Form, Background} from "./styles";
+import { useAuth } from "../../hooks/auth";
+
+import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
 export function SingIn() {
+  
+  const data = useAuth();
+  console.log("MEU CONTEXTO", data);
+
   return (
     <Container>
-
       <Form>
         <h1>Rocket Notes</h1>
         <p>Aplicação para salvar e gerenciar sues links uteis</p>
@@ -25,7 +29,7 @@ export function SingIn() {
         <Link to="/register">Criar Conta</Link>
       </Form>
 
-      <Background/>
+      <Background />
     </Container>
-  )
+  );
 }
