@@ -30,22 +30,29 @@ function AuthProvider({ children }) {
     }
   }
 
+  function singOut() {
+    localStorage.removeItem("rocketNotes:user");
+    localStorage.removeItem("rocketNotes:token");
+
+    setData({});
+  }
+
   useEffect(() => {
-      const user = localStorage.getItem("rocketNotes:user");
-      const token = localStorage.getItem("rocketNotes:token" );
+    const user = localStorage.getItem("rocketNotes:user");
+    const token = localStorage.getItem("rocketNotes:token");
 
-      if(token && user) {
-        api.defaults.headers.authorization = `Bearer ${token}`;
+    if (token && user) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
 
-        setData({
-          token,
-          user: JSON.parse(user)
-        })
-      }
-  }, [])
+      setData({
+        token,
+        user: JSON.parse(user),
+      });
+    }
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ singIn, user: data.user }}>
+    <AuthContext.Provider value={{ singIn, singOut, user: data.user }}>
       {children}
     </AuthContext.Provider>
   );
