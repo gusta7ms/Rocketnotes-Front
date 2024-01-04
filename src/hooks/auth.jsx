@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { createContext, useContext } from "react";
 
@@ -18,9 +19,5 @@ function useAuth() {
 
   return context;
 }
-
-
-
-
 
 export { AuthProvider, useAuth };

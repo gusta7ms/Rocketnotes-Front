@@ -8,7 +8,7 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
 export function SingIn() {
-  
+
   const data = useAuth();
   console.log("MEU CONTEXTO", data);
 
