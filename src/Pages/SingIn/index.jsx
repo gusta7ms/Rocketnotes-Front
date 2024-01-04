@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -8,9 +9,14 @@ import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
 export function SingIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const data = useAuth();
-  console.log("MEU CONTEXTO", data);
+  const { singIn } = useAuth();
+
+  function handleSingIn() {
+    singIn({email, password});
+  }
 
   return (
     <Container>
@@ -20,11 +26,11 @@ export function SingIn() {
 
         <h2>Faça seu login</h2>
 
-        <Input placeholder="email" type="text" icon={FiMail} />
+        <Input placeholder="email" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)}/>
 
-        <Input placeholder="password" type="password" icon={FiLock} />
+        <Input placeholder="password" type="password" icon={FiLock} onChange={e => setPassword(e.target.value)}/>
 
-        <Button title="Entrar" />
+        <Button title="Entrar" onClick={handleSingIn}/>
 
         <Link to="/register">Criar Conta</Link>
       </Form>
