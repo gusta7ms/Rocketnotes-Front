@@ -57,9 +57,9 @@ class UsersController {
       );
     }
 
-    if (password === old_password) {
-      throw new AppError("A senha tem que ser diferente da atual");
-    }
+    // if (password === old_password) {
+    //   throw new AppError("A senha tem que ser diferente da atual");
+    // }
 
     if (password && old_password) {
       const checkOldPassword = await compare(old_password, user.password);
