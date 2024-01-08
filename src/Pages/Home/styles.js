@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -16,7 +16,6 @@ export const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 `;
-
 export const Brand = styled.div`
   grid-area: brand;
 
@@ -27,6 +26,7 @@ export const Brand = styled.div`
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   > h1 {
@@ -34,36 +34,29 @@ export const Brand = styled.div`
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
 `;
-
 export const Menu = styled.ul`
   grid-area: menu;
-
-  display: flex;
-  flex-direction: column;
-
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
-  padding-top: 62px;
+  padding-top: 64px;
+  text-align: center;
 
   > li {
-    margin: 0 auto;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 `;
-
 export const Search = styled.div`
   grid-area: search;
   padding: 64px 64px 0;
 `;
-
 export const Content = styled.div`
   grid-area: content;
   padding: 0 64px;
   overflow-y: auto;
 `;
-
 export const NewNote = styled(Link)`
   grid-area: newnote;
+
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
   color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
