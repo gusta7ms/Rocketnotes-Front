@@ -1,9 +1,10 @@
+import { api } from "../../services/api";
+
 import { RiShutDownLine } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
 
 import { Container, Profile, Logout } from "./styles";
 
-import { api } from "../../services/api";
 import avatarPlaceholderImg from "../../../assets/placeholderImg.jpg";
 
 export function Header() {

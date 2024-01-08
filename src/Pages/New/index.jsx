@@ -1,5 +1,7 @@
+import { api } from "../../services/api";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Container, Form } from "./styles";
 
@@ -11,6 +13,11 @@ import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
 
 export function New() {
+  const navigate = useNavigate()
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
   const [links, setLinks] = useState([]);
   const [newLink, setNewLink] = useState("");
 
@@ -22,8 +29,8 @@ export function New() {
     setNewLink("");
   }
 
-  function handleRemoveLink(linkDeleted){
-    setLinks(prevStats => prevStats.filter(link => link !== linkDeleted));
+  function handleRemoveLink(linkDeleted) {
+    setLinks((prevStats) => prevStats.filter((link) => link !== linkDeleted));
   }
 
   function handleAddTag() {
@@ -32,9 +39,21 @@ export function New() {
   }
 
   function handleRemoveTag(TagDeletes) {
-    setTags(prevState => prevState.filter(tag => tag !== TagDeletes));
+    setTags((prevState) => prevState.filter((tag) => tag !== TagDeletes));
   }
 
+  async function handleNewNote() {
+    await api.post("/notes", {
+      title,
+      description,
+      links,
+      tags,
+    });
+
+    alert("Nota criada com sucesso!");
+
+    navigate("/")
+  }
 
   return (
     <Container>
@@ -47,22 +66,27 @@ export function New() {
             <Link to="/">voltar</Link>
           </header>
 
-          <Input placeholder="Titulo" type="text" />
+          <Input
+            placeholder="Titulo"
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-          <TextArea placeholder="Observações" />
+          <TextArea
+            placeholder="Observações"
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
           <Section title="Links uteis">
-            {
-              links.map((link, index)=> (
-                <NoteItem
-                  key={String(index)}
-                  value={link}
-                  onClick={() => handleRemoveLink(link)}
-                />
-              ))
-            }
+            {links.map((link, index) => (
+              <NoteItem
+                key={String(index)}
+                value={link}
+                onClick={() => handleRemoveLink(link)}
+              />
+            ))}
             <NoteItem
-              isNew
+              $isNew
               placeholder="Novo link"
               value={newLink}
               onChange={(e) => setNewLink(e.target.value)}
@@ -72,17 +96,15 @@ export function New() {
 
           <Section title="Marcadores">
             <div className="tags">
-              {
-                tags.map((tag, index) => (
-                  <NoteItem
-                    key={String(index)}
-                    value={tag}
-                    onClick={() => handleRemoveTag(tag)}
-                  />
-                ))
-              }
+              {tags.map((tag, index) => (
+                <NoteItem
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => handleRemoveTag(tag)}
+                />
+              ))}
               <NoteItem
-                isNew
+                $isNew
                 placeholder="Nova Tag"
                 onChange={(e) => setNewTag(e.target.value)}
                 value={newTag}
@@ -91,7 +113,10 @@ export function New() {
             </div>
           </Section>
 
-          <Button title="Salvar" />
+          <Button
+            title="Salvar"
+            onClick={handleNewNote}
+          />
         </Form>
       </main>
     </Container>

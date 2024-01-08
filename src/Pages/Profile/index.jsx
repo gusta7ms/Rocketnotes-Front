@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
+import { api } from "../../services/api";
+
 import { useState } from "react";
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 import { Container, Form, Avatar } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
 
-import { api } from "../../services/api";
 
 import avatarPlaceholderImg from "../../../assets/placeholderImg.jpg";
 
