@@ -1,18 +1,26 @@
 import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { Container, Form, Background } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
 
-import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 export function SingIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { singIn } = useAuth();
+
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate("/register");
+  }
 
   function handleSingIn() {
     singIn({ email, password });
@@ -42,7 +50,7 @@ export function SingIn() {
 
         <Button title="Entrar" onClick={handleSingIn} />
 
-        <Link to="/register">Criar Conta</Link>
+        <ButtonText title="Criar Conta" onClick={handleBack}></ButtonText>
       </Form>
 
       <Background />

@@ -16,8 +16,8 @@ export const Container = styled.div`
   padding-right: 16px;
 
   > button {
-  border: none;
-  background: none;
+    border: none;
+    background: none;
   }
 
   .button-add {

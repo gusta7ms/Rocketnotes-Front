@@ -10,7 +10,9 @@ import avatarPlaceholderImg from "../../../assets/placeholderImg.jpg";
 export function Header() {
   const { singOut, user } = useAuth();
 
-  const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholderImg;
+  const avatarURL = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholderImg;
 
   return (
     <Container>

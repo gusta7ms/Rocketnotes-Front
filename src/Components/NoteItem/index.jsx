@@ -6,12 +6,7 @@ import { Container } from "./styled.js";
 export function NoteItem({ $isNew, value, onClick, ...rest }) {
   return (
     <Container $isNew={$isNew}>
-      <input
-        type="text"
-        value={value}
-        readOnly={!$isNew}
-        {...rest}
-      />
+      <input type="text" value={value} readOnly={!$isNew} {...rest} />
 
       <button
         type="button"

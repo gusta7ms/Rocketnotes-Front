@@ -1,10 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Container } from './styles'
+import { Container } from "./styles";
 
 export function Tag({ title, ...rest }) {
-  return (
-    <Container {...rest}>
-      {title}
-    </Container>
-  )
+  return <Container {...rest}>{title}</Container>;
 }

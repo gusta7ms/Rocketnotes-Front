@@ -7,10 +7,9 @@ import { Container, Form, Avatar } from "./styles";
 
 import { useAuth } from "../../hooks/auth";
 
-
 import avatarPlaceholderImg from "../../../assets/placeholderImg.jpg";
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -29,6 +28,12 @@ export function Profile() {
 
   const [avatar, setAvatar] = useState(avatarURL);
   const [avatarFile, setAvatarFile] = useState(null);
+
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   async function handleUpdate() {
     const updated = {
@@ -54,9 +59,9 @@ export function Profile() {
   return (
     <Container>
       <header>
-        <Link to="/">
-          <FiArrowLeft />
-        </Link>
+        <button type="button" onClick={handleBack}>
+          <FiArrowLeft size={32} />
+        </button>
       </header>
 
       <Form>

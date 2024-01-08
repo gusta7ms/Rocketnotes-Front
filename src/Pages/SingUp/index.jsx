@@ -3,11 +3,12 @@ import { api } from "../../services/api";
 import { useState } from "react";
 import { FiUser, FiMail, FiLock } from "react-icons/fi";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Container, Form, Background } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 export function SingUp() {
   const [name, setName] = useState("");
@@ -15,6 +16,10 @@ export function SingUp() {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
 
   function handleSingUp() {
     if (!name || !email || !password) {
@@ -25,7 +30,7 @@ export function SingUp() {
       .post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado com sucesso");
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         if (error.response) {
@@ -69,7 +74,7 @@ export function SingUp() {
 
         <Button title="Cadastrar seu novo usuário" onClick={handleSingUp} />
 
-        <Link to="/">Voltar para login</Link>
+        <ButtonText title="Voltar para login" onClick={handleBack}></ButtonText>
       </Form>
     </Container>
   );

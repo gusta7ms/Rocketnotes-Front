@@ -1,8 +1,7 @@
 // TODO PAGES STYLES SingIN
 
 import styled from "styled-components";
-import backgroundImg from "../../../assets/background.png"
-
+import backgroundImg from "../../../assets/background.png";
 
 export const Container = styled.div`
   height: 100vh;
@@ -30,13 +29,13 @@ export const Form = styled.form`
     font-size: 24px;
 
     margin: 48px 0;
-    }
+  }
 
   > p {
     font-size: 14px;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
-  > a {
+  > button:last-child {
     margin-top: 124px;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
@@ -44,8 +43,7 @@ export const Form = styled.form`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${backgroundImg})  no-repeat center center;
+  background: url(${backgroundImg}) no-repeat center center;
   background-size: cover;
   opacity: 0.4;
 `;
-
