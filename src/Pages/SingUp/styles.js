@@ -41,7 +41,6 @@ export const Form = styled.form`
   }
 
   > button:last-child {
-    background-color: red;
     margin-top: 60px;
   }
 `;
