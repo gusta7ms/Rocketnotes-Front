@@ -14,16 +14,26 @@ import { Tag } from "../../components/Tag";
 export function Details() {
   const [data, setData] = useState(null);
   const params = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  function handleBack(){
-    navigate("/")
+  function handleBack() {
+    navigate("/");
+  }
+
+  async function handleDeleteNote() {
+    const confirm = window.confirm(`
+      Deseja realmente remover a nota?
+      A nota será excluindo PERMANENTEMENTE!!`);
+
+    if (confirm) {
+      await api.delete(`/notes/${params.id}`);
+      handleBack();
+    }
   }
 
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/notes/${params.id}`);
-
       setData(response.data);
     }
 
@@ -37,7 +47,10 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <ButtonText title="Excluir Nota"></ButtonText>
+            <ButtonText
+              title="Excluir Nota"
+              onClick={handleDeleteNote}
+            ></ButtonText>
 
             <h1>{data.title}</h1>
 
