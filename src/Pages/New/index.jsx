@@ -13,7 +13,7 @@ import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
 
 export function New() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -43,6 +43,22 @@ export function New() {
   }
 
   async function handleNewNote() {
+    if (!title) {
+      return alert("Por favor adicionar um titulo.");
+    }
+
+    if (newLink) {
+      return alert(
+        "Você deixou uma Link para adicionar, mas não clicou em adicionar. Por favor clique para adicionar ou deixe o campo vazio."
+      );
+    }
+
+    if (newTag) {
+      return alert(
+        "Você deixou uma Tag para adicionar, mas não clicou em adicionar. Por favor clique para adicionar ou deixe o campo vazio."
+      );
+    }
+
     await api.post("/notes", {
       title,
       description,
@@ -52,7 +68,7 @@ export function New() {
 
     alert("Nota criada com sucesso!");
 
-    navigate("/")
+    navigate("/");
   }
 
   return (
@@ -113,10 +129,7 @@ export function New() {
             </div>
           </Section>
 
-          <Button
-            title="Salvar"
-            onClick={handleNewNote}
-          />
+          <Button title="Salvar" onClick={handleNewNote} />
         </Form>
       </main>
     </Container>
