@@ -7,7 +7,7 @@ import theme from "./styles/theme";
 
 import { AuthProvider } from "./hooks/auth";
 
-import { Routes } from "./routes/indexFront";
+import { Routes } from "./routes/index.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

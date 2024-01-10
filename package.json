@@ -1,16 +1,13 @@
 {
   "name": "rocket_notes",
   "private": true,
-  "version": "1.0.0",
-  "type": "commonjs",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "devFront": "vite",
-    "devBack": "nodemon ./src/server.cjs",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "node ./src/server.js",
-    "migrate": "knex migrate:latest"
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.6.3",
@@ -19,16 +16,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.21.1",
-    "styled-components": "^6.1.1",
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-async-errors": "^3.1.1",
-    "jsonwebtoken": "^9.0.2",
-    "knex": "^3.1.0",
-    "multer": "^1.4.5-lts.1",
-    "sqlite": "^4.2.1",
-    "sqlite3": "^5.1.6"
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -40,12 +28,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.8",
-    "nodemon": "^3.0.2"
-  },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "knexfile.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "vite": "^5.0.8"
+  }
 }
