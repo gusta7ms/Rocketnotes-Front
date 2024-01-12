@@ -6,9 +6,9 @@ import { FiUser, FiMail, FiLock } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 import { Container, Form, Background } from "./styles";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
-import { ButtonText } from "../../components/ButtonText";
+import { Input } from "../../Components/Input";
+import { Button } from "../../Components/Button";
+import { ButtonText } from "../../Components/ButtonText";
 
 export function SingUp() {
   const [name, setName] = useState("");

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
-import GlobalStyles from "./styles/global.js";
+import GlobalStyles from "./Styles/global.js";
 
-import theme from "./styles/theme";
+import theme from "./Styles/theme";
 
 import { AuthProvider } from "./hooks/auth";
 

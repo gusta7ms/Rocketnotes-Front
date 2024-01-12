@@ -6,13 +6,13 @@ import { FiPlus } from "react-icons/fi";
 
 import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
 
-import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { Header } from "../../Components/Header";
+import { Input } from "../../Components/Input";
 
-import { Section } from "../../components/Section";
-import { Note } from "../../components/Note";
+import { Section } from "../../Components/Section";
+import { Note } from "../../Components/Note";
 
-import { ButtonText } from "../../components/ButtonText";
+import { ButtonText } from "../../Components/ButtonText";
 
 export function Home() {
   const [search, setSearch] = useState([]);

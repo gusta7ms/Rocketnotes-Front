@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { SingIn } from "../pages/SingIn";
-import { SingUp } from "../pages/SingUp";
+import { SingIn } from "../Pages/SingIn";
+import { SingUp } from "../Pages/SingUp";
 
 export function AuthRoutes() {
   // eslint-disable-next-line no-unused-vars

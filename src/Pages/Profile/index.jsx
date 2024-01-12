@@ -11,8 +11,8 @@ import avatarPlaceholderImg from "../../../assets/placeholderImg.jpg";
 
 import { useNavigate } from "react-router-dom";
 
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
+import { Input } from "../../Components/Input";
+import { Button } from "../../Components/Button";
 
 export function Profile() {
   const { user, updateProfile } = useAuth();

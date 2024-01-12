@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 
 import { Container, Links, Content } from "./styles";
 
-import { Header } from "../../components/Header";
-import { Section } from "../../components/Section";
-import { Button } from "../../components/Button";
-import { ButtonText } from "../../components/ButtonText";
-import { Tag } from "../../components/Tag";
+import { Header } from "../../Components/Header";
+import { Section } from "../../Components/Section";
+import { Button } from "../../Components/Button";
+import { ButtonText } from "../../Components/ButtonText";
+import { Tag } from "../../Components/Tag";
 
 export function Details() {
   const [data, setData] = useState(null);

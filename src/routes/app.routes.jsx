@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-import { New } from "../pages/New";
-import { Home } from "../pages/Home";
-import { Details } from "../pages/Details";
-import { Profile } from "../pages/Profile";
+import { New } from "../Pages/New";
+import { Home } from "../Pages/Home";
+import { Details } from "../Pages/Details";
+import { Profile } from "../Pages/Profile";
 
 export function AppRoutes() {
   return (

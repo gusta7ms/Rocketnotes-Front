@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { FiPlus, FiX } from "react-icons/fi";
-import { Container } from "./styled.js";
+import { Container } from "./styled";
 
 export function NoteItem({ $isNew, value, onClick, ...rest }) {
   return (
